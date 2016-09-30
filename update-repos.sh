@@ -1,8 +1,8 @@
 #!/bin/bash
 
-DIRS="/$HOME/Repositories/"
+REPOSITORY_DIR="${REPOSITORY_DIR:-$HOME/Repositories/}"
 
-for DIR in $(find $DIRS* -maxdepth 0 -type d );
+for DIR in $(find $REPOSITORY_DIR* -maxdepth 0 -type d );
 do
     cd $DIR
     BRANCH="$(git name-rev --name-only HEAD)"
